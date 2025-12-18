@@ -1,0 +1,228 @@
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    margin: 0;
+    padding: 0;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a7ff83;
+    text-shadow: 0 0 10px #70e000;
+    user-select: none;
+    margin-bottom: 1rem;
+}
+
+/* Search input and button container */
+main {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Search input */
+input#searchInput {
+    width: 70%;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 40px 0 0 40px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(167, 255, 131, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    color: #eaeaea;
+}
+
+input#searchInput::placeholder {
+    color: #0e0e0e;
+}
+
+/* Search button */
+button#searchBtn {
+    width: 25%;
+    padding: 0.8rem 0;
+    border-radius: 0 40px 40px 0;
+    border: none;
+    background: #70e000;
+    color: #111;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #70e000;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+button#searchBtn:hover {
+    background: #a7ff83;
+    box-shadow: 0 6px 14px #a7ff83;
+}
+
+/* Loading spinner */
+#spinner {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #70e000;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Movie list container */
+#movieList {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Movie card */
+.movie-card {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    box-shadow: 0 0 10px #3bd67a;
+    width: 180px;
+    padding: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #d0f5c6;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #a7ff83;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #70e000;
+    margin-bottom: 10px;
+}
+
+.movie-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.movie-year {
+    font-size: 0.9rem;
+    color: #a5d6a7;
+    margin-top: 4px;
+}
+
+/* Movie details panel */
+#movieDetails {
+    margin: 30px auto 50px;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 14px;
+    padding: 25px 25px 40px;
+    box-shadow: 0 0 35px #4adb7e;
+    color: #c5f0b9;
+    text-align: left;
+    position: relative;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #ff5454;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #ff8a8a;
+}
+
+#movieDetails img {
+    float: left;
+    margin-right: 20px;
+    width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #70e000;
+}
+
+#movieDetails h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #a7ff83;
+}
+
+#movieDetails p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #d9f5c8;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 780px) {
+
+    input#searchInput,
+    button#searchBtn {
+        width: 100%;
+        border-radius: 40px;
+        margin: 8px 0;
+    }
+
+    #movieDetails img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    #movieList {
+        justify-content: center;
+    }
+
+    .movie-card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .movie-card {
+        width: 90%;
+    }
+}
